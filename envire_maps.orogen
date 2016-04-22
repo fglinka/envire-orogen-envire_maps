@@ -1,0 +1,23 @@
+name "envire_maps"
+version "0.1"
+
+using_library 'envire_maps'
+
+import_types_from 'base'
+import_types_from 'maps'
+
+# define opaques
+typekit do
+
+    opaque_autogen '/envire/maps/ElevationMap',
+                    :includes => "envire_maps/ElevationMap.hpp",
+                    :type => :envire_serialization,
+                    :embedded_type => "/maps/grid/ElevationMap"
+end
+
+
+# type exports
+typekit do
+    export_types '/envire/maps/ElevationMap'
+end
+

@@ -1,0 +1,12 @@
+<package>
+    <description brief="Envire export of Standard maps">
+    Envire wrapper for the export and usage of standard map library inside envire
+    </description>
+    <author>Envire Team/ric-team8@dfki.de</author>
+    <maintainer>Javier Hidalgo Carrio/javier.hidalgo_carrio@dfki.de</maintainer>
+    <license>BSD</license>
+    <url>http://envire.github.io</url>
+    <depend package="base/cmake" />
+    <depend package="envire/orogen/envire_core" />
+    <depend package="envire/envire_maps" />
+</package>
