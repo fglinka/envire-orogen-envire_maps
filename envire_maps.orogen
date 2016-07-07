@@ -2,68 +2,56 @@ name "envire_maps"
 version "0.1"
 
 using_library 'maps'
-using_library 'envire_maps'
 
 import_types_from 'base'
-
+import_types_from 'envire_core'
 import_types_from "maps/grid/MLSConfig.hpp"
 
 # define opaques
 typekit do
 
-    opaque_autogen '/envire/maps/GridMapC',
-                    :includes => "envire_maps/GridMapC.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/grid/GridMap<char>"   
+    opaque_autogen '/maps/grid/GridMap</char>',
+                    :includes => "maps/grid/GridMap.hpp"
 
-    opaque_autogen '/envire/maps/GridMapI',
-                    :includes => "envire_maps/GridMapI.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/grid/GridMap<int>"    
+    opaque_autogen '/maps/grid/GridMap</int>',
+                    :includes => "maps/grid/GridMap.hpp"
                     
-    opaque_autogen '/envire/maps/GridMapF',
-                    :includes => "envire_maps/GridMapF.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/grid/GridMap<float>"                                        
+    opaque_autogen '/maps/grid/GridMap</float>',
+                    :includes => "maps/grid/GridMap.hpp"
 
-    opaque_autogen '/envire/maps/GridMapD',
-                    :includes => "envire_maps/GridMapD.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/grid/GridMap<double>"   
+    opaque_autogen '/maps/grid/GridMap</double>',
+                    :includes => "maps/grid/GridMap.hpp"
 
-    opaque_autogen '/envire/maps/ElevationMap',
-                    :includes => "envire_maps/ElevationMap.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/grid/ElevationMap"
+    opaque_autogen '/maps/grid/ElevationMap',
+                    :includes => "maps/grid/ElevationMap.hpp"
          
-    opaque_autogen '/envire/maps/MLSMapSloped',
-                    :includes => "envire_maps/MLSMapSloped.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/grid/MLSMap</maps/grid/MLSConfig/SLOPE>"       
+    opaque_autogen '/maps/grid/MLSMap</maps/grid/MLSConfig/SLOPE>',
+                    :includes => "maps/grid/MLSMap.hpp"
 
-    opaque_autogen '/envire/maps/MLSMapKalman',
-                    :includes => "envire_maps/MLSMapKalman.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/grid/MLSMap</maps/grid/MLSConfig/KALMAN>"                                                      
+    opaque_autogen '/maps/grid/MLSMap</maps/grid/MLSConfig/KALMAN>',
+                    :includes => "maps/grid/MLSMap.hpp"
 
-    opaque_autogen '/envire/maps/ContourMap',
-                    :includes => "envire_maps/ContourMap.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/maps/geometric/GeometricMap</maps/geometric/LineSegment3d>"    
+    opaque_autogen '/maps/geometric/GeometricMap</maps/geometric/LineSegment3d>',
+                    :includes => "maps/geometric/ContourMap.hpp"
 end
 
+maps = ['/maps/grid/GridMap</char>',
+        '/maps/grid/GridMap</int>',
+        '/maps/grid/GridMap</float>',
+        '/maps/grid/GridMap</double>',
+        '/maps/grid/ElevationMap',
+        '/maps/grid/MLSMap</maps/grid/MLSConfig/SLOPE>',
+        '/maps/grid/MLSMap</maps/grid/MLSConfig/KALMAN>',
+        '/maps/geometric/GeometricMap</maps/geometric/LineSegment3d>']
 
 # type exports
 typekit do
-    export_types '/envire/maps/GridMapC'    
-    export_types '/envire/maps/GridMapI'   
-    export_types '/envire/maps/GridMapF'           
-    export_types '/envire/maps/GridMapD'    
-    export_types '/envire/maps/ElevationMap'
-    export_types '/envire/maps/MLSMapKalman'         
-    export_types '/envire/maps/MLSMapSloped'     
-    export_types '/envire/maps/ContourMap'
+    envire_maps = []
+    maps.each do |map|
+        envire_maps.push spatio_temporal map
+    end
 
-
+    export_types *maps,
+                 *envire_maps
 end
 
