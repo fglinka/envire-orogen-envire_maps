@@ -11,28 +11,35 @@ import_types_from "maps/grid/MLSConfig.hpp"
 typekit do
 
     opaque_autogen '/maps/grid/GridMap</char>',
-                    :includes => "maps/grid/GridMap.hpp"
+                    :includes => "maps/grid/GridMap.hpp",
+                    :alias_name => '/maps/grid/GridMapC'
 
     opaque_autogen '/maps/grid/GridMap</int>',
-                    :includes => "maps/grid/GridMap.hpp"
+                    :includes => "maps/grid/GridMap.hpp",
+                    :alias_name => '/maps/grid/GridMapI'
                     
     opaque_autogen '/maps/grid/GridMap</float>',
-                    :includes => "maps/grid/GridMap.hpp"
+                    :includes => "maps/grid/GridMap.hpp",
+                    :alias_name => '/maps/grid/GridMapF'
 
     opaque_autogen '/maps/grid/GridMap</double>',
-                    :includes => "maps/grid/GridMap.hpp"
+                    :includes => "maps/grid/GridMap.hpp",
+                    :alias_name => '/maps/grid/GridMapD'
 
     opaque_autogen '/maps/grid/ElevationMap',
                     :includes => "maps/grid/ElevationMap.hpp"
          
     opaque_autogen '/maps/grid/MLSMap</maps/grid/MLSConfig/SLOPE>',
-                    :includes => "maps/grid/MLSMap.hpp"
+                    :includes => "maps/grid/MLSMap.hpp",
+                    :alias_name => '/maps/grid/MLSMapSloped'
 
     opaque_autogen '/maps/grid/MLSMap</maps/grid/MLSConfig/KALMAN>',
-                    :includes => "maps/grid/MLSMap.hpp"
+                    :includes => "maps/grid/MLSMap.hpp",
+                    :alias_name => '/maps/grid/MLSMapKalman'
 
     opaque_autogen '/maps/geometric/GeometricMap</maps/geometric/LineSegment3d>',
-                    :includes => "maps/geometric/ContourMap.hpp"
+                    :includes => "maps/geometric/ContourMap.hpp",
+                    :alias_name => '/maps/geometric/ContourMap'
 end
 
 maps = ['/maps/grid/GridMap</char>',
