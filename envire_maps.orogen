@@ -53,7 +53,7 @@ typekit do
 
     opaque_autogen '/maps/grid/TraversabilityMap3d</maps/grid/TraversabilityNodeBase *>',
                     :includes => "maps/grid/TraversabilityMap3d.hpp",
-                    :alias_name => '/maps/geometric/TraversabilityBaseMap3d'
+                    :alias_name => '/maps/grid/TraversabilityBaseMap3d'
 end
 
 maps = ['/maps/grid/GridMap</char>',
