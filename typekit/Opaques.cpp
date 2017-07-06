@@ -13,13 +13,13 @@
 
 void orogen_typekits::toIntermediate(::wrappers::Index& intermediate, ::maps::grid::Index const& real_type)
 {
-    intermediate.x = real_type(0, 0);
-    intermediate.y = real_type(0, 1);
+    intermediate.x = real_type.x();
+    intermediate.y = real_type.y();
 }
 
 void orogen_typekits::fromIntermediate(::maps::grid::Index& real_type, ::wrappers::Index const& intermediate)
 {
-    real_type(0, 0) = intermediate.x;
-    real_type(0, 1) = intermediate.y;
+    real_type.x() = intermediate.x;
+    real_type.y() = intermediate.y;
 }
 
