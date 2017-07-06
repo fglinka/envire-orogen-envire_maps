@@ -7,6 +7,10 @@ import_types_from 'base'
 import_types_from 'envire_core'
 import_types_from "maps/grid/MLSConfig.hpp"
 
+import_types_from 'maps/grid/Index.hpp'
+import_types_from 'envire_mapsTypes.hpp'
+typekit.opaque_type '/maps/grid/Index', 'wrappers/Index'
+
 # define opaques
 typekit do
 
