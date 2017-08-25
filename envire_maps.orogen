@@ -41,6 +41,10 @@ typekit do
                     :includes => "maps/grid/MLSMap.hpp",
                     :alias_name => '/maps/grid/MLSMapKalman'
 
+    opaque_autogen '/maps/grid/MLSMap</maps/grid/MLSConfig/BASE>',
+                    :includes => "maps/grid/MLSMap.hpp",
+                    :alias_name => '/maps/grid/MLSMapBase'
+
     opaque_autogen '/maps/grid/MLSMap</maps/grid/MLSConfig/PRECALCULATED>',
                     :includes => "maps/grid/MLSMap.hpp",
                     :alias_name => '/maps/grid/MLSMapPrecalculated'
