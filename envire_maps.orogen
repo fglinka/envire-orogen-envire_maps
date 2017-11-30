@@ -58,10 +58,6 @@ typekit do
 
     opaque_autogen '/maps/grid/TSDFVolumetricMap',
                     :includes => "maps/grid/TSDFVolumetricMap.hpp"
-
-    opaque_autogen '/maps/grid/TraversabilityMap3d</maps/grid/TraversabilityNodeBase *>',
-                    :includes => "maps/grid/TraversabilityMap3d.hpp",
-                    :alias_name => '/maps/grid/TraversabilityBaseMap3d'
 end
 
 maps = ['/maps/grid/GridMap</char>',
@@ -74,8 +70,7 @@ maps = ['/maps/grid/GridMap</char>',
         '/maps/grid/MLSMap</maps/grid/MLSConfig/PRECALCULATED>',
         '/maps/geometric/GeometricMap</maps/geometric/LineSegment3d>',
         '/maps/grid/OccupancyGridMap',
-        '/maps/grid/TSDFVolumetricMap',
-        '/maps/grid/TraversabilityBaseMap3d']
+        '/maps/grid/TSDFVolumetricMap']
 
 # type exports
 typekit do
